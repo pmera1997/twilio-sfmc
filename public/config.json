@@ -30,7 +30,7 @@
         }
     },
     "configurationArguments": {
-      "applicationExtensionKey": "ab0d696c-ffdc-4474-843c-80a93220f1c6",
+      "applicationExtensionKey": "7ed9e1be-42f5-48b8-a831-7e86e484ea95",
        "save": {
            "url": "https://twiliosfmc.herokuapp.com/save",
             "verb": "POST",
