@@ -21,7 +21,7 @@
                 }               
             ],
             "outArguments": [],
-            "url": "https://twiliosfmc.herokuapp.com/journeybuilder/execute",
+            "url": "https://twiliosfmc.herokuapp.com/execute",
             "verb": "POST",
             "body": "",
             "format": "json",
