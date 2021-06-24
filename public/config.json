@@ -21,7 +21,7 @@
                 }               
             ],
             "outArguments": [],
-            "url": "https://twiliosfmc.herokuapp.com/execute",
+            "url": "https://twiliosfmc.herokuapp.com/activity/execute",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -32,7 +32,7 @@
     "configurationArguments": {
       "applicationExtensionKey": "7ed9e1be-42f5-48b8-a831-7e86e484ea95",
        "save": {
-           "url": "https://twiliosfmc.herokuapp.com/save",
+           "url": "https://twiliosfmc.herokuapp.com/activity/save",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -40,7 +40,7 @@
             "timeout": 2000
        },
        "publish": {
-           "url": "https://twiliosfmc.herokuapp.com/publish",
+           "url": "https://twiliosfmc.herokuapp.com/activity/publish",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -48,7 +48,7 @@
             "timeout": 2000
        },
        "validate": {
-           "url": "https://twiliosfmc.herokuapp.com/validate",
+           "url": "https://twiliosfmc.herokuapp.com/activity/validate",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -56,7 +56,7 @@
             "timeout": 2000
        },
        "stop": {
-           "url": "https://twiliosfmc.herokuapp.com/stop",
+           "url": "https://twiliosfmc.herokuapp.com/activity/stop",
             "verb": "POST",
             "body": "",
             "format": "json",
