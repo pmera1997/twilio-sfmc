@@ -17,11 +17,11 @@
             "inArguments": [
                 {
                   "email": "{{Contact.Default.EmailAddress}}",
-                  "to": "{{Contact.Attribute.TwilioV1.TwilioNumber}}" 
+                  "to": "{{Contact.Attribute.TwilioDE.TwilioNumber}}" 
                 }               
             ],
             "outArguments": [],
-            "url": "https://twiliosfmc.herokuapp.com/activity/execute",
+            "url": "https://twiliosfmc.herokuapp.com/journeybuilder/execute",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -32,7 +32,7 @@
     "configurationArguments": {
       "applicationExtensionKey": "7ed9e1be-42f5-48b8-a831-7e86e484ea95",
        "save": {
-           "url": "https://twiliosfmc.herokuapp.com/activity/save",
+           "url": "https://twiliosfmc.herokuapp.com/save",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -40,7 +40,7 @@
             "timeout": 2000
        },
        "publish": {
-           "url": "https://twiliosfmc.herokuapp.com/activity/publish",
+           "url": "https://twiliosfmc.herokuapp.com/publish",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -48,7 +48,7 @@
             "timeout": 2000
        },
        "validate": {
-           "url": "https://twiliosfmc.herokuapp.com/activity/validate",
+           "url": "https://twiliosfmc.herokuapp.com/validate",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -56,7 +56,7 @@
             "timeout": 2000
        },
        "stop": {
-           "url": "https://twiliosfmc.herokuapp.com/activity/stop",
+           "url": "https://twiliosfmc.herokuapp.com/stop",
             "verb": "POST",
             "body": "",
             "format": "json",
