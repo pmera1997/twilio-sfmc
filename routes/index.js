@@ -3,6 +3,7 @@
 //Twilo Message Code
 const express = require('express');
 const bodyParser = require('body-parser');
+const sendSms = require('./twilio');
 
 const app = express();
 
@@ -14,7 +15,7 @@ const port = 3000;
 
 const userDatabase = [];
 
-// Create user endpoint
+// Create users endpoint
 app.post('/users', (req, res) => {
   const { email, password, phone } = req.body;
   const user = {
@@ -25,8 +26,12 @@ app.post('/users', (req, res) => {
 
   userDatabase.push(user);
 
+  const welcomeMessage = 'Welcome to Chillz! Your verification code is 54875';
+
+  sendSms(user.phone, welcomeMessage);
+
   res.status(201).send({
-    message: 'Account created successfully, kindly check your phone to activate your account!',
+    message: 'Ram Ram',
     data: user
   })
 });
@@ -35,7 +40,9 @@ app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
 
-module.exports = app;//End Twilo Message Code
+module.exports = app;
+
+//End Twilo Message Code
 
 
 // Deps
