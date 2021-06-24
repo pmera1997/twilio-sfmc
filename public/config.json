@@ -36,32 +36,32 @@
             "verb": "POST",
             "body": "",
             "format": "json",
-            "useJwt": false,
-            "timeout": 10000
+            "useJwt": true
+            
        },
        "publish": {
            "url": "https://twiliosfmc.herokuapp.com/journeybuilder/publish",
             "verb": "POST",
             "body": "",
             "format": "json",
-            "useJwt": false,
-            "timeout": 10000
+            "useJwt": true
+     
        },
        "validate": {
            "url": "https://twiliosfmc.herokuapp.com/journeybuilder/validate",
             "verb": "POST",
             "body": "",
             "format": "json",
-            "useJwt": false,
-            "timeout": 10000
+            "useJwt": true
+            
        },
        "stop": {
-           "url": "https://twiliosfmc.herokuapp.com/journeybuilder/stop",
+          "url": "https://twiliosfmc.herokuapp.com/journeybuilder/stop",
             "verb": "POST",
             "body": "",
             "format": "json",
-            "useJwt": false,
-            "timeout": 10000
+            "useJwt": true
+            
        }
     },
     "wizardSteps": [
