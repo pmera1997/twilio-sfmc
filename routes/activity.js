@@ -78,7 +78,7 @@ exports.save = function (req, res) {
     //console.log("Saved: "+req.body.inArguments[0]);
     
     // Data from the req and put it in an array accessible to the main app.
-    console.log( req.body );
+    console.log('Data from the req:'+ req.body );
     logData(req);
     res.send(200, 'Save');
 };
@@ -95,7 +95,7 @@ exports.execute = function (req, res) {
     console.log("1");	
     //console.log("Executed: "+req.body.inArguments[0]);
     
-    var requestBody = req.body.inArguments;
+    var requestBody = req.inArguments[0];
     console.log('Request Body:-'+requestBody);
 
     const accountSid = requestBody.accountSid;
