@@ -108,6 +108,18 @@ define([
         console.log("Payload on SAVE function: "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
 
-    }                    
-
+    } 
+    
+    
+        var twilio = require('twilio');
+        var body1 = $('#messageBody').val();
+       // Find your account sid and auth token in your Twilio account Console.
+       var client = new twilio('ACefb6762e119ac9accff0d345636a6ee8', '5db48de6e246012766ba0634ca4d22bd');
+        // Send the text message.
+        client.messages.create({
+            to: '{{Contact.Attribute.TwilioDE.TwilioNumber}}',
+            from: '+16106098635',
+            body: body1
+        });
+    
 });
