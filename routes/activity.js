@@ -95,7 +95,8 @@ exports.execute = function (req, res) {
     console.log("1");	
     //console.log("Executed: "+req.body.inArguments[0]);
     
-    var requestBody = req.body.inArguments[0];
+    var requestBody = req.body.inArguments;
+    console.log('Request Body:-'+requestBody);
 
     const accountSid = requestBody.accountSid;
     const authToken = requestBody.authToken;
