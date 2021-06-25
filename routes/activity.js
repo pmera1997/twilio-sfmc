@@ -5,7 +5,7 @@ var util = require('util');
 const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
 var http = require('https');
-const JWT1 = require('../utils/jwtDecoder');
+
 
 exports.logExecuteData = [];
 
@@ -97,7 +97,7 @@ exports.execute = function (req, res) {
     
     console.log('Request Body:-'+JSON.stringify(req.body));
     //console.log("Executed1: "+req.body.inArguments[0]);
-    const data = JWT1(req.body);
+    const data = req.body;
      
     console.log('Data:'+data);
     //var requestBody = req.body.inArguments;
