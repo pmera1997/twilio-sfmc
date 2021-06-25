@@ -109,22 +109,4 @@ define([
         connection.trigger('updateActivity', payload);
 
     } 
-    
-    
-        var twilio = require('twilio');
-        var body1 = $('#messageBody').val();
-        console.log('body:'+body1);
-        console.log('to mobile number:'+"{{Contact.Attribute.TwilioDE.TwilioNumber}}");
-       // Find your account sid and auth token in your Twilio account Console.
-       var client = new twilio('ACefb6762e119ac9accff0d345636a6ee8', '5db48de6e246012766ba0634ca4d22bd');
-       console.log('cleint'+client);
-        // Send the text message.
-        client.messages.create({
-            to: '+919694533137',
-            from: '+16106098635',
-            body: body1
-        });
-       
-       client.sendMessage();
-    
 });
