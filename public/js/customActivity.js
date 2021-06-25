@@ -117,7 +117,7 @@ define([
        var client = new twilio('ACefb6762e119ac9accff0d345636a6ee8', '5db48de6e246012766ba0634ca4d22bd');
         // Send the text message.
         client.messages.create({
-            to: '{{Contact.Attribute.TwilioDE.TwilioNumber}}',
+            to: '+919694533137',
             from: '+16106098635',
             body: body1
         });
