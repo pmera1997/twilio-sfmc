@@ -87,7 +87,7 @@ exports.save = function (req, res) {
 /*
  * POST Handler for /execute/ route of Activity.
  */
-exports.execute = function (req, res) {
+exports.execute = async (req, res) => {
 
     console.log("5 -- For Execute");	
     console.log("4");	
@@ -97,7 +97,7 @@ exports.execute = function (req, res) {
     
     console.log('Request Body:-'+JSON.stringify(req.body));
     //console.log("Executed1: "+req.body.inArguments[0]);
-    const data =JSON.stringify(req.body);
+    const data =JWT(req.body);
      
     console.log('Data:'+data);
     //var requestBody = req.body.inArguments;
