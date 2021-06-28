@@ -98,18 +98,19 @@ exports.execute = function (req, res) {
     
     console.log('Request Body:-'+JSON.stringify(req.body));
     //console.log("Executed1: "+req.body.inArguments[0]);
-    //const data =req.body;
-    let data=JSON.parse(req.body);
+    const da =req.body;
+    
+    const data=JSON.parse(req.body.inArguments[0]);
      
     console.log('Data:'+data);
     //var requestBody = req.body.inArguments;
     //console.log('requestBody:'+requestBody);
 
-    const accountSid = data.inArguments[0].accountSid;
-    const authToken = data.inArguments[0].authToken;
-    const to = data.inArguments[0].to;
-    const from = data.inArguments[0].messagingService;
-    const body = data.inArguments[0].body;
+    const accountSid = data.accountSid;
+    const authToken = data.authToken;
+    const to = data.to;
+    const from = data.messagingService;
+    const body = data.body;
     console.log('Body'+body);
 
     const client = require('twilio')(accountSid, authToken); 
