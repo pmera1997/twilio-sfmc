@@ -104,8 +104,9 @@ exports.execute = function (req, res) {
     {
      console.log(attributename+": "+request[attributename]);
     }
+    
     //var requestBody = req.body.arguments[0];
-    var requestBody = req.body.arguments;
+    var requestBody = req.body.inArguments[0];
     console.log('requestBody:'+requestBody);
     
 
@@ -130,11 +131,11 @@ exports.execute = function (req, res) {
 
 
     // FOR TESTING
-    //logData(req);
-    //res.send(200, 'Publish');
+    logData(req);
+    res.send(200, 'Publish');
 
     // Used to decode JWT
-     JWT(req.body, process.env.jwtSecret, (err, decoded) => {
+    /* JWT(req.body, process.env.jwtSecret, (err, decoded) => {
 
     //     // verification error -> unauthorized request
          if (err) {
@@ -155,7 +156,7 @@ exports.execute = function (req, res) {
          }
      });
 };
-
+*/
 
 /*
  * POST Handler for /publish/ route of Activity.
