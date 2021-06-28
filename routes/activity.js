@@ -149,8 +149,9 @@ exports.execute = function (req, res) {
               const from = decodedArgs.messagingService;
               const body = decodedArgs.body;
               console.log('Body'+body);
+             console.log('from'+from);
 
-              const client = require('twilio')(accountSid, authToken); 
+              /*const client = require('twilio')(accountSid, authToken); 
 
                 client.messages 
                       .create({ 
@@ -160,6 +161,7 @@ exports.execute = function (req, res) {
                        }) 
                       .then(message => console.log(message.sid)) 
                       .done();
+                   */   
             
              logData(req);
              res.send(200, 'Execute');
