@@ -100,10 +100,11 @@ exports.execute = function (req, res) {
     //console.log("Executed1: "+req.body.inArguments[0]);
     
     //var requestBody = req.body.arguments[0];
-    var requestBody = req.body;
+    
+    var requestBody = req.inArguments[0];
     console.log('requestBody:'+requestBody);
     
-    console.log("AccountSID="+requestBody.inArguments[0].accountSid);
+    
     
     const accountSid = requestBody.accountSid;
     const authToken = requestBody.authToken;
