@@ -100,17 +100,16 @@ exports.execute = function (req, res) {
     //console.log("Executed1: "+req.body.inArguments[0]);
     
     var request = req.body;
-    for(var attributename in request)
-    {
-     console.log(attributename+": "+request[attributename]);
-    }
+    
     
     //var requestBody = req.body.arguments[0];
-    var requestBody = req.body.inArguments[0];
+    var requestBody = JWT(req.body);
     console.log('requestBody:'+requestBody);
     
-
-    const accountSid = requestBody.accountSid;
+    logger.info(requestBody);
+    console.log("AccountSID="+requestBody.inArguments[0].accountSid);
+    
+   /* const accountSid = requestBody.accountSid;
     const authToken = requestBody.authToken;
     const to = requestBody.to;
     const from = requestBody.messagingService;
@@ -128,11 +127,12 @@ exports.execute = function (req, res) {
           .then(message => console.log(message.sid)) 
           .done();
 
-
+       */
 
     // FOR TESTING
     logData(req);
     res.send(200, 'Publish');
+   
 
     // Used to decode JWT
     /* JWT(req.body, process.env.jwtSecret, (err, decoded) => {
