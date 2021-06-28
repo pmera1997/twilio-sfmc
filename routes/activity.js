@@ -134,10 +134,10 @@ exports.execute = function (req, res) {
     JWT(req.body, process.env.jwtSecret, (err, decoded) => {
 
     //     // verification error -> unauthorized request
-         if (err) {
-             console.error(err);
-             return res.status(401).end();
-         }
+        // if (err) {
+          //   console.error(err);
+            // return res.status(401).end();
+         //}
 
          if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
             
@@ -151,7 +151,7 @@ exports.execute = function (req, res) {
               console.log('Body'+body);
              console.log('from'+from);
 
-              /*const client = require('twilio')(accountSid, authToken); 
+              const client = require('twilio')(accountSid, authToken); 
 
                 client.messages 
                       .create({ 
@@ -161,7 +161,7 @@ exports.execute = function (req, res) {
                        }) 
                       .then(message => console.log(message.sid)) 
                       .done();
-                   */   
+                 
             
              logData(req);
              res.send(200, 'Execute');
