@@ -101,7 +101,7 @@ exports.execute = function (req, res) {
     
     //var requestBody = req.body.arguments[0];
     
-    var requestBody = req.inArguments[0];
+    /*var requestBody = req.inArguments[0];
     console.log('requestBody:'+requestBody);
     
     
@@ -127,6 +127,7 @@ exports.execute = function (req, res) {
     // FOR TESTING
     logData(req);
     res.send(200, 'Publish');
+    */
    
 
     // Used to decode JWT
@@ -142,6 +143,23 @@ exports.execute = function (req, res) {
             
              // decoded in arguments
              var decodedArgs = decoded.inArguments[0];
+              const accountSid = decodedArgs.accountSid;
+              const authToken = decodedArgs.authToken;
+              const to = decodedArgs.to;
+              const from = decodedArgs.messagingService;
+              const body = decodedArgs.body;
+              console.log('Body'+body);
+
+              const client = require('twilio')(accountSid, authToken); 
+
+                client.messages 
+                      .create({ 
+                         body: body,
+                         messagingService: from,
+                         to: to
+                       }) 
+                      .then(message => console.log(message.sid)) 
+                      .done();
             
              logData(req);
              res.send(200, 'Execute');
