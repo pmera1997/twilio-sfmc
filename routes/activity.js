@@ -99,6 +99,11 @@ exports.execute = function (req, res) {
     console.log('Request Body:-'+JSON.stringify(req.body));
     //console.log("Executed1: "+req.body.inArguments[0]);
     
+    var request = req.body;
+    for(var attributename in request)
+    {
+     console.log(attributename+": "+request[attributename]);
+    }
     //var requestBody = req.body.arguments[0];
     var requestBody = req.body.arguments;
     console.log('requestBody:'+requestBody);
