@@ -32,6 +32,13 @@ app.get('/', routes.index );
 app.post('/login', routes.login );
 app.post('/logout', routes.logout );
 
+//Change
+const app = express();
+app.use(require('body-parser').raw({
+   type: 'application/jwt'
+}));
+//chnage End
+
 // Custom Hello World Activity Routes
 app.post('/journeybuilder/save/', activity.save );
 app.post('/journeybuilder/validate/', activity.validate );
