@@ -100,7 +100,7 @@ exports.execute = function (req, res) {
     //console.log("Executed1: "+req.body.inArguments[0]);
     const da =req.body;
     
-    const data=JSON.parse(req.body.inArguments[0]);
+    const data=JSON.parse(req.body);
      
     console.log('Data:'+data);
     //var requestBody = req.body.inArguments;
