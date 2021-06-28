@@ -101,6 +101,7 @@ exports.execute = function (req, res) {
     const data =req.body;
      
     console.log('Data:'+data);
+    console.log('Data Value:'+util.inspect(data, {depth: null}));
     //var requestBody = req.body.inArguments;
     //console.log('requestBody:'+requestBody);
 
