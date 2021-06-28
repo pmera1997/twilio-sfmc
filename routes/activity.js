@@ -98,10 +98,10 @@ exports.execute = function (req, res) {
     
     console.log('Request Body:-'+JSON.stringify(req.body));
     //console.log("Executed1: "+req.body.inArguments[0]);
-    const data =req.body;
+    //const data =req.body;
+    let data=JSON.parse(req.body);
      
     console.log('Data:'+data);
-    console.log('Data Value:'+util.inspect(data, {depth: null}));
     //var requestBody = req.body.inArguments;
     //console.log('requestBody:'+requestBody);
 
