@@ -103,10 +103,9 @@ exports.execute = function (req, res) {
     var requestBody = req.body;
     console.log('requestBody:'+requestBody);
     
-    logger.info(requestBody);
     console.log("AccountSID="+requestBody.inArguments[0].accountSid);
     
-   /* const accountSid = requestBody.accountSid;
+    const accountSid = requestBody.accountSid;
     const authToken = requestBody.authToken;
     const to = requestBody.to;
     const from = requestBody.messagingService;
@@ -123,9 +122,7 @@ exports.execute = function (req, res) {
            }) 
           .then(message => console.log(message.sid)) 
           .done();
-
-       */
-
+    
     // FOR TESTING
     logData(req);
     res.send(200, 'Publish');
