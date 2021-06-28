@@ -100,11 +100,18 @@ exports.execute = function (req, res) {
     //console.log("Executed1: "+req.body.inArguments[0]);
     const da =req.body;
     
-    const data=req.body.inArguments;
-     
     console.log('Data:'+data);
+    
+    
+    for(var attributename in da)
+    {
+     console.log(attributename+": "+da[attributename]);
+   }
+    
+    const data=req.body.inArguments[1];
     //var requestBody = req.body.inArguments;
     //console.log('requestBody:'+requestBody);
+    
 
     const accountSid = data.accountSid;
     const authToken = data.authToken;
