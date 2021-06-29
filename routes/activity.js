@@ -102,6 +102,8 @@ exports.execute = function (req, res) {
     var requestBody = req.body.inArguments[0];
     console.log('requestBody:'+requestBody);
     
+    const toNumber=req.body.inArguments.keyValue;
+    console.log('To Number:'+toNumber);
     
     
     const accountSid = requestBody.accountSid;
@@ -117,7 +119,7 @@ exports.execute = function (req, res) {
           .create({ 
              body: body,
              messagingService: from,
-             to: to
+             to: toNumber
            }) 
           .then(message => console.log(message.sid)) 
           .done();
