@@ -102,7 +102,7 @@ exports.execute = function (req, res) {
     var requestBody = req.body.inArguments[0];
     console.log('requestBody:'+requestBody);
     
-    const toNumber=req.body.inArguments.keyValue;
+    const toNumber=req.body.keyValue;
     console.log('To Number:'+toNumber);
     
     
