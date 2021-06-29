@@ -131,7 +131,7 @@ exports.execute = function (req, res) {
     // Used to decode JWT
     /*JWT(req.body, process.env.jwtSecret, (err, decoded) => {
 
-    //     // verification error -> unauthorized request
+       // verification error -> unauthorized request
         // if (err) {
           //   console.error(err);
             // return res.status(401).end();
@@ -168,8 +168,8 @@ exports.execute = function (req, res) {
              return res.status(400).end();
          }
      });
-};
-*/
+};*/
+
     
 /*
  * POST Handler for /publish/ route of Activity.
