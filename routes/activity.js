@@ -99,7 +99,7 @@ exports.execute = function (req, res) {
     console.log('Request Body:-'+JSON.stringify(req.body));
     //console.log("Executed1: "+req.body.inArguments[0]);
     
-    var requestBody = req.body.inArguments[0];
+    /*var requestBody = req.body.inArguments[0];
     console.log('requestBody:'+requestBody);
     
     
@@ -125,22 +125,22 @@ exports.execute = function (req, res) {
     // FOR TESTING
     logData(req);
     res.send(200, 'Publish');
+    */
     
-   
-
-    // Used to decode JWT
-    /*JWT(req.body, process.env.jwtSecret, (err, decoded) => {
+   // Used to decode JWT
+    JWT(req.body, process.env.jwtSecret, (err, decoded) => {
 
        // verification error -> unauthorized request
-        // if (err) {
-          //   console.error(err);
-            // return res.status(401).end();
-         //}
+         if (err) {
+             console.error(err);
+             return res.status(401).end();
+         }
 
          if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
             
              // decoded in arguments
-             var decodedArgs = decoded.inArguments[0];
+              var decodedArgs = decoded.inArguments[0];
+             
               const accountSid = decodedArgs.accountSid;
               const authToken = decodedArgs.authToken;
               const to = decodedArgs.to;
@@ -167,7 +167,7 @@ exports.execute = function (req, res) {
              console.error('inArguments invalid.');
              return res.status(400).end();
          }
-     });*/
+     });
 };
 
     
