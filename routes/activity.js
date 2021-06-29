@@ -167,8 +167,8 @@ exports.execute = function (req, res) {
              console.error('inArguments invalid.');
              return res.status(400).end();
          }
-     });
-};*/
+     });*/
+};
 
     
 /*
