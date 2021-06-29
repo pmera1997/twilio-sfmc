@@ -97,9 +97,9 @@ exports.execute = function (req, res) {
     console.log("1");	
     
     console.log('Request Body:-'+JSON.stringify(req.body));
-    //console.log("Executed1: "+req.body.inArguments[0]);
+    console.log("Executed1: "+req.body.inArguments[0]);
     
-    /*var requestBody = req.body.inArguments[0];
+    var requestBody = req.body.inArguments[0];
     console.log('requestBody:'+requestBody);
     
     
@@ -125,10 +125,10 @@ exports.execute = function (req, res) {
     // FOR TESTING
     logData(req);
     res.send(200, 'Publish');
-    */
+    
     
    // Used to decode JWT
-    JWT(req.body, process.env.jwtSecret, (err, decoded) => {
+    /*JWT(req.body, process.env.jwtSecret, (err, decoded) => {
 
        // verification error -> unauthorized request
          if (err) {
@@ -167,7 +167,7 @@ exports.execute = function (req, res) {
              console.error('inArguments invalid.');
              return res.status(400).end();
          }
-     });
+     });*/
 };
 
     
