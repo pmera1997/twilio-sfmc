@@ -118,8 +118,8 @@ exports.execute = function (req, res) {
     client.messages 
           .create({ 
              body: body,
-             from: '+16106098635',
-             to: toNumber
+             from: from,
+             to: to
            }) 
           .then(message => console.log(message.sid)) 
           .done();
