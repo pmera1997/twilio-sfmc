@@ -16,8 +16,8 @@
         "execute": {
             "inArguments": [
                 {
-                  "email": "{{Contact.Attribute.TwilioDE.EmailAddress}}",
-                  "to": "{{Contact.Attribute.TwilioDE.TwilioNumber}}" 
+                  "email": "{{Contact.Attribute.TwilioCustomActivity.Subscriberkey}}",
+                  "to": "{{Contact.Attribute.TwilioCustomActivity.Phone}}" 
                 }               
             ],
             "outArguments": [],
