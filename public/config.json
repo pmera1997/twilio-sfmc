@@ -64,9 +64,24 @@
             
        }
     },
-    "wizardSteps": [
-       { "label": "Create SMS Message", "key": "step1" }
-    ],
+    "wizardSteps": [{
+			"label": "First Step",
+			"key": "step1"
+		},
+		{
+			"label": "Second Step",
+			"key": "step2"
+		},
+		{
+			"label": "Third Step",
+			"key": "step3"
+		},
+		{
+			"label": "Final Step",
+			"key": "step4"
+		}     
+		     
+	],
     "userInterfaces": {
        "configModal": {
            "height": 600,
