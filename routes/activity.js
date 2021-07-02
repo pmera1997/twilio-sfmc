@@ -124,8 +124,8 @@ exports.execute = function (req, res) {
            }) 
           .then(message =>{
                console.log(JSON.stringify(message));
-               console.log("Account SID:"+message.account_sid);
-               
+               console.log("Account SID:"+message.accountSid);
+               console.log("apiVersion:"+message.apiVersion);
                 }) 
           .done();
     
