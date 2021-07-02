@@ -1,5 +1,6 @@
 'use strict';
 var util = require('util');
+const SFClient = require('../lib/sfmc-client');
 
 // Deps
 const Path = require('path');
