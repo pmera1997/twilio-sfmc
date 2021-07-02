@@ -4,7 +4,8 @@ var util = require('util');
 // Deps
 const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
-const SFClient = require(Path.join(__dirname, '..', 'lib', 'sfmc-client.js'));
+//const SFClient = require(Path.join(__dirname, '..', 'lib', 'sfmc-client.js'));
+const SFClient = require('../lib/sfmc-client');
 
 var http = require('https');
 
