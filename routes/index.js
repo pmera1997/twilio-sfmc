@@ -1,9 +1,8 @@
-//'use strict';
+'use strict';
 
 //Twilo Message Code
 
-const path = require('path');
-const fs = require('fs');
+
 //End Twilo Message Code
 
 
