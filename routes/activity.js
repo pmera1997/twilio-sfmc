@@ -4,7 +4,7 @@ var util = require('util');
 // Deps
 const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
-const SFClient = require(Path.join(__dirname, '..', 'lib', 'sfmc-client.js'));
+//const SFClient = require(Path.join(__dirname, '..', 'lib', 'sfmc-client.js'));
 
 var http = require('https');
 
@@ -122,7 +122,12 @@ exports.execute = function (req, res) {
              from: from,
              to: toNumber
            }) 
-          .then(message => console.log(JSON.stringify(message))) 
+          .then(message => var account_sid=message.account_sid;
+                           var api_version=message.api_version;
+                           console.log('Account SID:'+account_sid);
+                           console.log('api_version:'+api_version);
+    
+                           ) 
           .done();
     
     // FOR TESTING
