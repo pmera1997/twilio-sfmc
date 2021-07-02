@@ -122,13 +122,14 @@ exports.execute = function (req, res) {
              from: from,
              to: toNumber
            }) 
-          .then(message => var account_sid=message.account_sid;
-                           var api_version=message.api_version;
-                           console.log('Account SID:'+account_sid);
-                           console.log('api_version:'+api_version);
-    
-                           ) 
+          .then(message =>storeData(message) ) 
           .done();
+    
+    function storeData(msg)
+    {
+        var account_sid=msg.message;
+        console.log("Account SID:"+account_sid);
+    }
     
     // FOR TESTING
     logData(req);
