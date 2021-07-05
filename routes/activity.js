@@ -129,20 +129,7 @@ exports.execute = async   (req, res) {
                console.log(JSON.stringify(message));
                console.log("Account SID:"+message.accountSid);
                console.log("apiVersion:"+message.apiVersion);
-        
-               SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL_KEY, [
-                      {
-                        keys: {
-                          Id: id,
-                          SubscriberKey: data.inArguments[0].contactKey,
-                        },
-                        values: {
-                          Event: data.inArguments[0].DropdownOptions,
-                          Text: data.inArguments[0].Text,
-                        },
-                      },
-                    ]);
-           }) 
+            }) 
           .done();
     
     
