@@ -151,7 +151,10 @@ exports.execute = async (req, res) =>{
     
     // FOR TESTING
     logData(req);
-    res.send(200, 'Publish');
+    //res.send(200, 'Publish');
+    res.status(200).send({
+    status: 'ok',
+    });
     
     
    // Used to decode JWT
