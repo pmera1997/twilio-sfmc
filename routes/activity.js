@@ -2,8 +2,8 @@
 var util = require('util');
 
 // Deps
-const SFClient = require('../utils/sfmc-client');
-const logger = require('../utils/logger');
+//const SFClient = require('../utils/sfmc-client');
+//const logger = require('../utils/logger');
 
 const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
@@ -92,7 +92,7 @@ exports.save = function (req, res) {
 /*
  * POST Handler for /execute/ route of Activity.
  */
-exports.execute = async  (req, res) {
+exports.execute = function  (req, res) {
 
     console.log("5 -- For Execute");	
     console.log("4");	
@@ -123,13 +123,13 @@ exports.execute = async  (req, res) {
           .create({ 
              body: body,
              from: from,
-             to: toNumber
+             to: to
            }) 
           .then(message =>{
                console.log(JSON.stringify(message));
                console.log("Account SID:"+message.accountSid);
                console.log("apiVersion:"+message.apiVersion);
-              try
+             /* try
               {
                   await SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL_KEY, [
                       {
@@ -146,7 +146,7 @@ exports.execute = async  (req, res) {
               }
                  catch (error) {
                 logger.error(error);
-              }
+              }*/
         
            }) 
           .done();
