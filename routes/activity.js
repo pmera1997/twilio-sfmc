@@ -133,7 +133,7 @@ exports.execute = function (req, res){
                console.log("Account SID:"+message.accountSid);
                console.log("apiVersion:"+message.apiVersion);
         
-               await SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL_KEY, [
+                SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL_KEY, [
                   {
                     keys: {
                       Id: id,
