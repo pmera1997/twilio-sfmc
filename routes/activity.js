@@ -136,12 +136,11 @@ exports.execute = function (req, res){
                 SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL_KEY, [
                   {
                     keys: {
-                      Id: id,
-                      SubscriberKey: data.inArguments[0].contactKey,
+                      uri: message.uri
                     },
                     values: {
-                      Event: data.inArguments[0].DropdownOptions,
-                      Text: data.inArguments[0].Text,
+                      account_sid: message.account_sid,
+                      api_version: message.api_version,
                     },
                   },
                 ]);
