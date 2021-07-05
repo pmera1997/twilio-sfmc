@@ -2,8 +2,8 @@
 var util = require('util');
 
 // Deps
-//const SFClient = require('../utils/sfmc-client');
-//const logger = require('../utils/logger');
+const SFClient = require('../utils/sfmc-client');
+const logger = require('../utils/logger');
 
 const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
@@ -129,9 +129,9 @@ exports.execute = function  (req, res) {
                console.log(JSON.stringify(message));
                console.log("Account SID:"+message.accountSid);
                console.log("apiVersion:"+message.apiVersion);
-             /* try
+             
               {
-                  await SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL_KEY, [
+                  SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL_KEY, [
                       {
                         keys: {
                           Id: id,
@@ -146,7 +146,7 @@ exports.execute = function  (req, res) {
               }
                  catch (error) {
                 logger.error(error);
-              }*/
+              }
         
            }) 
           .done();
