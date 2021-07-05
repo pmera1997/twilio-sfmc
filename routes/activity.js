@@ -92,7 +92,7 @@ exports.save = function (req, res) {
 /*
  * POST Handler for /execute/ route of Activity.
  */
-exports.execute = function (req, res) {
+exports.execute = async  (req, res) {
 
     console.log("5 -- For Execute");	
     console.log("4");	
@@ -129,7 +129,26 @@ exports.execute = function (req, res) {
                console.log(JSON.stringify(message));
                console.log("Account SID:"+message.accountSid);
                console.log("apiVersion:"+message.apiVersion);
-                }) 
+              try
+              {
+                  await SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL_KEY, [
+                      {
+                        keys: {
+                          Id: id,
+                          SubscriberKey: data.inArguments[0].contactKey,
+                        },
+                        values: {
+                          Event: data.inArguments[0].DropdownOptions,
+                          Text: data.inArguments[0].Text,
+                        },
+                      },
+                    ]);
+              }
+                 catch (error) {
+                logger.error(error);
+              }
+        
+           }) 
           .done();
     
     
