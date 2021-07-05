@@ -2,8 +2,8 @@
 var util = require('util');
 
 // Deps
-const SFClient = require('../utils/sfmc-client');
-const logger = require('../utils/logger');
+//const SFClient = require('../utils/sfmc-client');
+//const logger = require('../utils/logger');
 
 const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
