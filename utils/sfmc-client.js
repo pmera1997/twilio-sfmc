@@ -2,15 +2,15 @@ const FuelRest = require('fuel-rest');
 
 const options = {
   auth: {
-    clientId: "g95o40t7yy6g1v5z1vn0t2o4",
-    clientSecret: "8cnFgw7elEJI30RQuJwlFRxE",
+    clientId: process.env.SFMC_CLIENT_ID,
+    clientSecret: process.env.SFMC_CLIENT_SECRET,
     authOptions: {
       authVersion: 2,
-      accountId: "514015916",
+      accountId: process.env.SFMC_ACCOUNT_ID,
     },
-    authUrl: `https://mc6vgk-sxj9p08pqwxqz9hw9-4my.auth.marketingcloudapis.com/v2/token`,
+    authUrl: `https://${process.env.SFMC_SUBDOMAIN}.auth.marketingcloudapis.com/v2/token`,
   },
-  origin: `https://mc6vgk-sxj9p08pqwxqz9hw9-4my.rest.marketingcloudapis.com/`,
+  origin: `https://${process.env.SFMC_SUBDOMAIN}.rest.marketingcloudapis.com/`,
   globalReqOptions: {
   },
 };
@@ -24,7 +24,7 @@ const client = new FuelRest(options);
  * @returns {?Promise}
  */
 const saveData = async (externalKey, data) => client.post({
-  uri: `/hub/v1/dataevents/key:9400A203-842C-4AB7-9004-EC12BC6D910F/rowset`,
+  uri: `/hub/v1/dataevents/key:${externalKey}/rowset`,
   headers: {
     'Content-Type': 'application/json',
   },
