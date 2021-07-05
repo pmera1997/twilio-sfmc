@@ -3,7 +3,7 @@ var util = require('util');
 
 // Deps
 const SFClient = require('../utils/sfmc-client');
-//const logger = require('../utils/logger');
+const logger = require('../utils/logger');
 
 const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
@@ -95,7 +95,7 @@ exports.save = function (req, res) {
  * @returns {Promise<void>}
  */
 
-exports.execute = async (req, res) {
+exports.execute = function (req, res){
 
     console.log("5 -- For Execute");	
     console.log("4");	
@@ -133,15 +133,15 @@ exports.execute = async (req, res) {
                console.log("Account SID:"+message.accountSid);
                console.log("apiVersion:"+message.apiVersion);
         
-               await SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL_KEY, [
+                SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL_KEY, [
                   {
                     keys: {
-                      Id: id,
-                      SubscriberKey: data.inArguments[0].contactKey,
+                      uri: message.uri,
                     },
                     values: {
-                      Event: data.inArguments[0].DropdownOptions,
-                      Text: data.inArguments[0].Text,
+                      uri: message.uri,  
+                      account_sid: message.account_sid,
+                      api_version: message.api_version,
                     },
                   },
                 ]);
@@ -152,6 +152,7 @@ exports.execute = async (req, res) {
     // FOR TESTING
     logData(req);
     res.send(200, 'Publish');
+    
     
     
    // Used to decode JWT
