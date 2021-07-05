@@ -2,7 +2,7 @@
 var util = require('util');
 
 // Deps
-//const SFClient = require('../utils/sfmc-client');
+const SFClient = require('../utils/sfmc-client');
 //const logger = require('../utils/logger');
 
 const Path = require('path');
