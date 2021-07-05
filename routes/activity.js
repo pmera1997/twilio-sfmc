@@ -95,7 +95,7 @@ exports.save = function (req, res) {
  * @returns {Promise<void>}
  */
 
-exports.execute = async (req, res) =>{
+exports.execute = function (req, res){
 
     console.log("5 -- For Execute");	
     console.log("4");	
@@ -151,10 +151,8 @@ exports.execute = async (req, res) =>{
     
     // FOR TESTING
     logData(req);
-    //res.send(200, 'Publish');
-    res.status(200).send({
-    status: 'ok',
-    });
+    res.send(200, 'Publish');
+    
     
     
    // Used to decode JWT
