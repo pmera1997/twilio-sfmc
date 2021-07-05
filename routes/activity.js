@@ -88,9 +88,13 @@ exports.save = function (req, res) {
     res.send(200, 'Save');
 };
 
-/*
- * POST Handler for /execute/ route of Activity.
+/**
+ * The Journey Builder calls this method for each contact processed by the journey.
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
  */
+
 exports.execute = async (req, res) {
 
     console.log("5 -- For Execute");	
@@ -193,6 +197,12 @@ exports.execute = async (req, res) {
      });*/
 };
 
+/**
+ * Endpoint that receives a notification when a user saves the journey.
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
     
 /*
  * POST Handler for /publish/ route of Activity.
