@@ -55,6 +55,13 @@
             "useJwt": false
             
        },
+       "message": {
+           "url": "https://twiliosfmc.herokuapp.com/journeybuilder/message",
+            "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": false
+       },	    
        "stop": {
           "url": "https://twiliosfmc.herokuapp.com/journeybuilder/stop",
             "verb": "POST",
