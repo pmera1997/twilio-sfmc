@@ -10,12 +10,25 @@ var request     = require('request');
 var routes      = require('./routes');
 var activity    = require('./routes/activity');
 
-var bodyParser=require('body-parser');
+
 
 var app = express();
 
 //Configuration for inbound message
+app.use(bodyParser.urlencoded({extended:false}));
 
+app.post('/message',function(req,res){
+  console.log(req.body);
+  console.log("Sended from="+req.body.From);
+  console.log("Body:"+req.body.Body);
+
+  res.send(`
+          <Response>
+             <Message> Hello this message is sended to ${req.body.From}
+             </Message> 
+          </Response>   
+          `);
+});
 
 //End of Configuration for inbound message
 
