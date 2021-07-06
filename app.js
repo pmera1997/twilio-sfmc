@@ -15,7 +15,6 @@ var activity    = require('./routes/activity');
 var app = express();
 
 //Configuration for inbound message
-app.use(bodyParser.urlencoded({extended:false}));
 
 app.post('/message',function(req,res){
   console.log(req.body);
@@ -58,6 +57,7 @@ app.post('/journeybuilder/save/', activity.save );
 app.post('/journeybuilder/validate/', activity.validate );
 app.post('/journeybuilder/publish/', activity.publish );
 app.post('/journeybuilder/execute/', activity.execute );
+app.post('/journeybuilder/message/', activity.message );
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
