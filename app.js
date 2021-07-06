@@ -10,7 +10,14 @@ var request     = require('request');
 var routes      = require('./routes');
 var activity    = require('./routes/activity');
 
+var bodyParser=require('body-parser');
+
 var app = express();
+
+//Configuration for inbound message
+
+
+//End of Configuration for inbound message
 
 // Configure Express
 app.set('port', process.env.PORT || 3000);
