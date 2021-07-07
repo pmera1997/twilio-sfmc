@@ -126,6 +126,7 @@ exports.execute = function (req, res){
           .create({ 
              body: body,
              from: from,
+             statusCallback:"https://twiliosfmc.herokuapp.com",
              to: toNumber
            }) 
           .then(message =>{
