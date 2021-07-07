@@ -34,8 +34,8 @@ http.createServer(app).listen(1337, () => {
 */
 
 app.post('/message',function(req,res){
-  console.log("Reply data:"+JSON.stringify(req));
-  console.log("Reply Body:"+JSON.stringify(req.body));
+  console.log("Reply data:"+req);
+  console.log("Reply Body:"+req.body);
 });
 
 
