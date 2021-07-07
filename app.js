@@ -34,16 +34,8 @@ http.createServer(app).listen(1337, () => {
 */
 
 app.post('/message',function(req,res){
-  console.log(req.body);
-  console.log("Sended from="+req.body.From);
-  console.log("Body:"+req.body.Body);
-
-  res.send(`
-          <Response>
-             <Message> Hello this message is sended to ${req.body.From}
-             </Message> 
-          </Response>   
-          `);
+  console.log("Reply data:"JSON.stringify(req));
+  console.log("Reply Body:"JSON.stringify(req.body));
 });
 
 
