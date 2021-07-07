@@ -34,7 +34,8 @@ http.createServer(app).listen(1337, () => {
 */
 
 app.post('/message',function(req,res){
-  console.log(req);
+  const str = CircularJSON.stringify(req);
+  console.log(JSON.parse(str));
   //console.log("Reply Body:"+req.body);
 });
 
