@@ -35,7 +35,8 @@ http.createServer(app).listen(1337, () => {
 */
 
 app.post('/message',function(req,res){
-  console.log(JSON.stringify(req));
+  console.log("Type of Request:"+typeof(req));
+  console.log("Json Request:"+JSON.parse(req));
   //console.log("Reply Body:"+req.body);
 });
 
