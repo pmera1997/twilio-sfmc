@@ -12,6 +12,7 @@ var activity    = require('./routes/activity');
 //const  stringify  = require("javascript-stringify");
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
+var CircularJSON = require('circular-json');
 
 var app = express();
 
@@ -34,8 +35,7 @@ http.createServer(app).listen(1337, () => {
 */
 
 app.post('/message',function(req,res){
-  const str = CircularJSON.stringify(req);
-  console.log(JSON.parse(str));
+  console.log(CircularJSON.stringify(req));
   //console.log("Reply Body:"+req.body);
 });
 
