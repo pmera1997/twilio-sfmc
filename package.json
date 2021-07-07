@@ -33,6 +33,7 @@
     "express": "^4.17.1",
     "fuel-auth": "^3.3.0",
     "fuel-rest": "^3.2.2",
+    "javascript-stringify": "^2.1.0",
     "jsonwebtoken": "^8.0.1",
     "lodash": "^4.17.21",
     "querystring": "^0.2.1",
