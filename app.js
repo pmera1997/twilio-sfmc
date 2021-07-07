@@ -9,7 +9,7 @@ var path        = require('path');
 var request     = require('request');
 var routes      = require('./routes');
 var activity    = require('./routes/activity');
-
+//const  stringify  = require("javascript-stringify");
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
 
@@ -34,8 +34,9 @@ http.createServer(app).listen(1337, () => {
 */
 
 app.post('/message',function(req,res){
-  console.log(JSON.stringify(req));
-  console.log("Reply Body:"+req.body);
+  const str = CircularJSON.stringify(req);
+  console.log(JSON.parse(str));
+  //console.log("Reply Body:"+req.body);
 });
 
 
