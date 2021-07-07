@@ -17,10 +17,10 @@ var app = express();
 
 //Configuration for inbound message
 
-app.post('/message', (req, res) => {
+/*app.post('/message', (req, res) => {
   const twiml = new MessagingResponse();
   console.log(req.body);
-  console.log("Sended from="+req.body.From);
+  //console.log("Sended from="+req.body.From);
   console.log("Body:"+req.body.Body);
   twiml.message('The Robots are coming! Head for the hills!');
 
@@ -31,8 +31,9 @@ app.post('/message', (req, res) => {
 http.createServer(app).listen(1337, () => {
   console.log('Express server listening on port 1337');
 });
+*/
 
-/*app.post('/message',function(req,res){
+app.post('/message',function(req,res){
   console.log(req.body);
   console.log("Sended from="+req.body.From);
   console.log("Body:"+req.body.Body);
@@ -44,7 +45,7 @@ http.createServer(app).listen(1337, () => {
           </Response>   
           `);
 });
-*/
+
 
 //End of Configuration for inbound message
 
