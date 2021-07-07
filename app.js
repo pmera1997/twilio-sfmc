@@ -36,7 +36,7 @@ http.createServer(app).listen(1337, () => {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.post('/message',function(req,res){
   var data=req;
-  console.log(req);
+  //console.log(req);
   console.log(req.body.From);
   console.log(req.body.Body);
   
