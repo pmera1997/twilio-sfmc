@@ -33,10 +33,13 @@ http.createServer(app).listen(1337, () => {
   console.log('Express server listening on port 1337');
 });
 */
-
+app.use(bodyParser.urlencoded({ extended: false }));
 app.post('/message',function(req,res){
-  console.log("Type of Request:"+JSON.stringify(req));
-  console.log("Json Request:"+JSON.parse(req));
+  var data=req;
+  console.log(req);
+  console.log(req.body.From);
+  console.log(req.body.Body);
+  
   //console.log("Reply Body:"+req.body);
 });
 
