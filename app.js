@@ -10,7 +10,7 @@ var request     = require('request');
 var routes      = require('./routes');
 var activity    = require('./routes/activity');
 
-//var SFClient = require('../utils/sfmc-client');
+var SFClient = require('./utils/sfmc-client');
 
 //var CircularJSON = require('circular-json');
 
@@ -38,7 +38,7 @@ app.post('/message',function(req,res){
   console.log(req);
   console.log(req.body.From);
   console.log(req.body.Body);
-  /*try
+  try
                {
                     SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL, [
                       {
@@ -54,7 +54,7 @@ app.post('/message',function(req,res){
                 catch(err)   
                {
                    console.log(err);
-               }*/
+               }
   
   //console.log("Reply Body:"+req.body);
 });
