@@ -10,7 +10,8 @@ var request     = require('request');
 var routes      = require('./routes');
 var activity    = require('./routes/activity');
 
-const replyData = require('../utils/sfmc');
+const SFClient = require('../utils/sfmc-client');
+const logger = require('../utils/logger');
 //const  stringify  = require("javascript-stringify");
 //const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
@@ -43,7 +44,7 @@ app.post('/message',function(req,res){
   console.log(req.body.Body);
   try
                {
-                    replyData.saveData(process.env.DATA_EXTENSION_EXTERNAL, [
+                    SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL, [
                       {
                         keys: {
                           SmsSid:req.body.From,
