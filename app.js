@@ -43,10 +43,15 @@ app.post('/message',function(req,res){
                     SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL, [
                       {
                         keys: {
-                          SmsSid:req.body.From,
+                          SmsSid:req.body.SmsSid,
                         },
                         values: {
-                          Body: req.body.Body  
+                          Body: req.body.Body ,
+                          ToCountry:req.body.ToCountry,
+                          MessageSid:req.body.MessageSid,
+                          From:req.body.From,
+                          FromCity:req.body.FromCity,
+                          To:req.body.To
                         },
                       },
                     ]);
