@@ -10,10 +10,7 @@ var request     = require('request');
 var routes      = require('./routes');
 var activity    = require('./routes/activity');
 
-const SFClient = require('../utils/sfmc-client');
-const logger = require('../utils/logger');
-//const  stringify  = require("javascript-stringify");
-//const MessagingResponse = require('twilio').twiml.MessagingResponse;
+var SFClient = require('../utils/sfmc-client');
 
 //var CircularJSON = require('circular-json');
 
