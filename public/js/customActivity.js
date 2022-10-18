@@ -187,6 +187,8 @@ define([
         var to="{{Contact.Attribute.AA_Twilio.Phone}}";
        
         var mail= "{{Contact.Attribute.AA_Twilio.Subscriberkey}}";
+
+        console.log("eventDefinitionKey----->" + eventDefinitionKey);
         console.log('To: ---> '+to);
        
         console.log('Email: --->');
