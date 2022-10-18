@@ -185,7 +185,7 @@ define([
         var messagingService = $('#messagingService').val();
         var body = $('#messageBody').val();
         var to="{{Contact.Attribute.AA_Twilio.Phone}}";
-        var to1 = "{{Event." + eventDefinitionKey + ".PhoneNo}}";
+        var to1 = "{{Event.DEAudience-6ac8ba08-6a1e-ea4f-059e-532221a3d64b.Phone}}";
         var mail= "{{Contact.Attribute.AA_Twilio.Subscriberkey}}";
         console.log('To: ---> '+to);
         console.log('\nTo1: ---> '+to1);
