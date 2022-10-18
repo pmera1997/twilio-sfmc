@@ -16,9 +16,9 @@
         "execute": {
             "inArguments": [
                 {
-                  "email": "{{Contact.Attribute.TwilioV1.EmailAddress}}",
-                  "to": "{{Contact.Attribute.TwilioV1.PhoneNo}}" 
-                }               
+                  "email": "{{Contact.Attribute.AA_Twilio.Subscriberkey}}",
+                  "to": "{{Contact.Attribute.AA_Twilio.Phone}}" 
+                }              
             ],
             "outArguments": [],
             "url": "https://custom-activity-twilio-sfmc.herokuapp.com/journeybuilder/execute",
