@@ -5,7 +5,8 @@ define([
 ) {
     'use strict';
     
-    var eventDefinitionKey;
+
+
     var connection = new Postmonger.Session();
     var payload = {};
     var lastStepEnabled = false;
@@ -16,7 +17,11 @@ define([
         { "label": "Third Step", "key": "step3" },
         { "label": "Final Step", "key": "step4" }
     ];
-    
+//-------------------------------
+    var eventDefinitionKey;
+    connection.trigger('requestInteraction');
+
+//-------------------//
     var currentStep = steps[0].key;
     connection.on('clickedNext', onClickedNext);
     connection.on('clickedBack', onClickedBack);
