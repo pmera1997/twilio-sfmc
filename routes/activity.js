@@ -103,7 +103,50 @@ exports.execute = function (req, res) {
   console.log("2");
   console.log("1");
 
-  console.log('Request Body:-' + JSON.stringify(req.body));
+   console.log('Request Body:-' + JSON.stringify(req.body));
+  console.log("Executed1: " + JSON.stringify(req.body.inArguments[0]));
+
+  var requestBody = req.body.inArguments[0];
+  console.log('requestBody:' + requestBody);
+
+  var mail= "{{Contact.Default.EmailAddress}}";
+  console.log('Email: --->');
+        console.log(mail);
+        console.log('-----------');
+  var to1='{{Contact.Attribute.TwilioV1.PhoneNo}}';
+  console.log('To: ---> '+to1); 
+  
+  const toNumber = req.body.keyValue;
+  console.log('To Number:' + toNumber);
+
+    const accountSid = requestBody.accountSid;
+    const authToken = requestBody.authToken;
+    const to = "+91"+requestBody.to;
+    const from = requestBody.messagingService;
+    const body = requestBody.body;
+    
+    console.log('Request Body:-' + JSON.stringify(req.body));
+    console.log("Executed1: " + req.body.inArguments[0]);
+    const client = require('twilio')(accountSid, authToken); 
+    
+    
+    client.messages 
+          .create({ 
+             body: body,
+             messagingService: from,
+             to: to
+           }) 
+          .then(message => console.log(message.sid)) 
+          .done();
+
+
+
+    // FOR TESTING
+    logData(req);
+    res.send(200, 'Publish');
+
+
+ /* console.log('Request Body:-' + JSON.stringify(req.body));
   console.log("Executed1: " + req.body.inArguments[0]);
 
   var requestBody = req.body.inArguments[0];
@@ -151,7 +194,7 @@ exports.execute = function (req, res) {
     })
     .catch(function (error) {
       console.log(error);
-    });
+    });*/
 
   //const client = require('twilio')(accountSid, authToken); 
 
@@ -205,8 +248,8 @@ exports.execute = function (req, res) {
         .done();*/
 
   // FOR TESTING
-  logData(req);
-  res.send(200, 'Publish');
+//  logData(req);
+ // res.send(200, 'Publish');
 
 
 
