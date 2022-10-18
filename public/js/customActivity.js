@@ -199,7 +199,7 @@ define([
             "authToken": authToken,
             "messagingService": messagingService,
             "body": body,
-            "to": "{{Event.DEAudience-a341458e-71fb-1dee-ed03-f2b8cf340b52.Phone}}"//<----This should map to your data extension name and phone number column,
+            "to": "{{Event.DEAudience-67865b80-f041-fbb7-b0a7-cbd00a76258c.Phone}}"//<----This should map to your data extension name and phone number column,
            
         }];
 
