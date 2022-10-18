@@ -184,7 +184,7 @@ define([
         var authToken = $('#authToken').val();
         var messagingService = $('#messagingService').val();
         var body = $('#messageBody').val();
-        var to="{{Contact.Attribute.AA_Twilio.Phone}}";
+        var to="{{Event.DEAudience-a341458e-71fb-1dee-ed03-f2b8cf340b52.Phone}}";
        
         var mail= "{{Contact.Attribute.AA_Twilio.Subscriberkey}}";
 
