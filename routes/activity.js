@@ -126,10 +126,12 @@ exports.execute = function (req, res) {
     //----Sent Request
 
   const client = require('twilio')(accountSid, authToken);
-
-
-
-
+  
+  client.messages
+      .create({body: body, 
+       from: from , 
+        to: to})
+      .then(message => console.log(message.sid));
 
     // FOR TESTING
     logData(req);
