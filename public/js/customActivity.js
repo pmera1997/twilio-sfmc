@@ -177,7 +177,7 @@ define([
         var authToken = $('#authToken').val();
         var messagingService = $('#messagingService').val();
         var body = $('#messageBody').val();
-        var to='{{Contact.Attribute.TwilioCustomActivity.Phone}}';
+        var to='{{Contact.Attribute.TwilioV1.PhoneNo}}';
         console.log('To:'+to);
 
         payload['arguments'].execute.inArguments = [{
@@ -185,7 +185,7 @@ define([
             "authToken": authToken,
             "messagingService": messagingService,
             "body": body,
-            "to": "{{Contact.Attribute.AA_Twilio.Phone}}" //<----This should map to your data extension name and phone number column
+            "to": "{{Contact.Attribute.TwilioV1.PhoneNo}}" //<----This should map to your data extension name and phone number column
         }];
 
         payload['metaData'].isConfigured = true;
