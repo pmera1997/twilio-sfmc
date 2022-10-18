@@ -4,7 +4,8 @@ define([
     Postmonger
 ) {
     'use strict';
-
+    
+    var eventDefinitionKey;
     var connection = new Postmonger.Session();
     var payload = {};
     var lastStepEnabled = false;
@@ -26,6 +27,12 @@ define([
     connection.on('initActivity', initialize);
     connection.on('requestedTokens', onGetTokens);
     connection.on('requestedEndpoints', onGetEndpoints);
+    
+
+    connection.on('requestedInteraction', function (settings) {
+        eventDefinitionKey = settings.triggers[0].metaData.eventDefinitionKey;
+        console.log("eventDefinitionKey----->" + eventDefinitionKey);
+    });
 
     //connection.on('clickedNext', save);
     //connection.on('clickedBack', onClickedBack);
@@ -178,14 +185,21 @@ define([
         var messagingService = $('#messagingService').val();
         var body = $('#messageBody').val();
         var to='{{Contact.Attribute.TwilioV1.PhoneNo}}';
-        console.log('To:'+to);
-
+        var to1 = "{{Event." + eventDefinitionKey + ".PhoneNo}}";
+        var mail= "{{Contact.Default.EmailAddress}}";
+        console.log('To: ---> '+to);
+        console.log('\nTo1: ---> '+to1);
+        console.log('Email: --->');
+        console.log(mail);
+        console.log('-----------');
         payload['arguments'].execute.inArguments = [{
             "accountSid": accountSid,
             "authToken": authToken,
             "messagingService": messagingService,
             "body": body,
-            "to": "{{Contact.Attribute.TwilioV1.PhoneNo}}" //<----This should map to your data extension name and phone number column
+            
+            "to": "{{Contact.Attribute.TwilioV1.PhoneNo}}"//<----This should map to your data extension name and phone number column,
+           
         }];
 
         payload['metaData'].isConfigured = true;
