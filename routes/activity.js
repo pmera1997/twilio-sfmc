@@ -109,12 +109,7 @@ exports.execute = function (req, res) {
   var requestBody = req.body.inArguments[0];
   console.log('requestBody:' + requestBody);
 
-  var mail= "{{Contact.Default.EmailAddress}}";
-  console.log('Email: --->');
-        console.log(mail);
-        console.log('-----------');
-  var to1= "{{Event.DEAudience-6ac8ba08-6a1e-ea4f-059e-532221a3d64b.Phone}}";
-  console.log('To: ---> '+to1); 
+
   
   const toNumber = req.body.keyValue;
   console.log('To Number:' + toNumber);
@@ -127,13 +122,21 @@ exports.execute = function (req, res) {
     
     console.log('Request Body:-' + JSON.stringify(req.body));
     console.log("Executed1: " + req.body.inArguments[0]);
-    const client = require('twilio')(accountSid, authToken); 
+
+    //----Sent Request
+
+
+
+
+//---------------
+
+   const client = require('twilio')(accountSid, authToken); 
     
     
     client.messages 
           .create({ 
              body: body,
-             messagingService: requestBody.messagingService,
+             From: from,
              to: to
            }) 
           .then(message => console.log(message.sid)) 
