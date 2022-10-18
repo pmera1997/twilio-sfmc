@@ -7,7 +7,7 @@
     "type": "REST",
     "lang": {
        "en-US": {
-           "name": "Twilio SMS",
+           "name": "SMS - TWILIO",
            "description": "Send Twilio SMS with Journey Builder",
            "TwilioMessage":"test"
        }
@@ -16,12 +16,12 @@
         "execute": {
             "inArguments": [
                 {
-                  "email": "{{Contact.Attribute.AA_Twilio.Subscriberkey}}",
-                  "to": "{{Contact.Attribute.AA_Twilio.Phone}}" 
+                  "email": "{{Contact.Attribute.TwilioV1.EmailAddress}}",
+                  "to": "{{Contact.Attribute.TwilioV1.PhoneNo}}" 
                 }               
             ],
             "outArguments": [],
-            "url": "https://twiliosfmc.herokuapp.com/journeybuilder/execute",
+            "url": "https://custom-activity-twilio-sfmc.herokuapp.com/journeybuilder/execute",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -30,9 +30,9 @@
         }
     },
     "configurationArguments": {
-      "applicationExtensionKey": "7ed9e1be-42f5-48b8-a831-7e86e484ea95",
+      "applicationExtensionKey": "35f9f6ee-d6db-4db1-a4fb-883ef8647b25",
        "save": {
-           "url": "https://twiliosfmc.herokuapp.com/journeybuilder/save",
+           "url": "https://custom-activity-twilio-sfmc.herokuapp.com/journeybuilder/save",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -40,7 +40,7 @@
             
        },
        "publish": {
-           "url": "https://twiliosfmc.herokuapp.com/journeybuilder/publish",
+           "url": "https://custom-activity-twilio-sfmc.herokuapp.com/journeybuilder/publish",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -48,7 +48,7 @@
      
        },
        "validate": {
-           "url": "https://twiliosfmc.herokuapp.com/journeybuilder/validate",
+           "url": "https://custom-activity-twilio-sfmc.herokuapp.com/journeybuilder/validate",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -56,7 +56,7 @@
             
        },
        "stop": {
-          "url": "https://twiliosfmc.herokuapp.com/journeybuilder/stop",
+          "url": "https://custom-activity-twilio-sfmc.herokuapp.com/journeybuilder/stop",
             "verb": "POST",
             "body": "",
             "format": "json",
