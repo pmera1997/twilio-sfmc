@@ -113,7 +113,7 @@ exports.execute = function (req, res) {
   console.log('Email: --->');
         console.log(mail);
         console.log('-----------');
-  var to1='{{Contact.Attribute.TwilioV1.PhoneNo}}';
+  var to1= "{{Event.DEAudience-6ac8ba08-6a1e-ea4f-059e-532221a3d64b.Phone}}";
   console.log('To: ---> '+to1); 
   
   const toNumber = req.body.keyValue;
