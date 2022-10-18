@@ -184,9 +184,9 @@ define([
         var authToken = $('#authToken').val();
         var messagingService = $('#messagingService').val();
         var body = $('#messageBody').val();
-        var to='{{Contact.Attribute.TwilioV1.PhoneNo}}';
+        var to="{{Contact.Attribute.AA_Twilio.Phone}}";
         var to1 = "{{Event." + eventDefinitionKey + ".PhoneNo}}";
-        var mail= "{{Contact.Default.EmailAddress}}";
+        var mail= "{{Contact.Attribute.AA_Twilio.Subscriberkey}}";
         console.log('To: ---> '+to);
         console.log('\nTo1: ---> '+to1);
         console.log('Email: --->');
@@ -197,8 +197,7 @@ define([
             "authToken": authToken,
             "messagingService": messagingService,
             "body": body,
-            
-            "to": "{{Contact.Attribute.TwilioV1.PhoneNo}}"//<----This should map to your data extension name and phone number column,
+            "to": "{{Contact.Attribute.AA_Twilio.Phone}}"//<----This should map to your data extension name and phone number column,
            
         }];
 
