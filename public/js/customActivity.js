@@ -199,7 +199,7 @@ define([
             "authToken": authToken,
             "messagingService": messagingService,
             "body": body,
-            "to": "{{Contact.Attribute.AA_Twilio.Phone}}"//<----This should map to your data extension name and phone number column,
+            "to": "{{Event.DEAudience-a341458e-71fb-1dee-ed03-f2b8cf340b52.Phone}}"//<----This should map to your data extension name and phone number column,
            
         }];
 
