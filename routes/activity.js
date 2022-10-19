@@ -131,7 +131,7 @@ exports.execute = function (req, res) {
       .create({body: body, 
        from: from , 
         to: to})
-      .then(message => console.log(message.sid));
+      .then(message => console.log(JSON.stringify(message)));
 
     // FOR TESTING
     logData(req);
