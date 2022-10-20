@@ -19,7 +19,7 @@ define([
     ];
 //-------------------------------
     var eventDefinitionKey;
-    connection.trigger('requestInteraction');
+    
 
 //-------------------//
     var currentStep = steps[0].key;
@@ -48,6 +48,7 @@ define([
         connection.trigger('ready');
         connection.trigger('requestTokens');
         connection.trigger('requestEndpoints');
+        connection.trigger('requestInteraction');
     }
 
     
@@ -191,20 +192,14 @@ define([
         var body = $('#messageBody').val();
         var to="{{Event." + eventDefinitionKey + ".Phone}}";
        
-        var mail= "{{Event." + eventDefinitionKey + ".Phone}}" ;
-        var mobile = "{{Event." + eventDefinitionKey + ".Mobile}}" ;
-        console.log("eventDefinitionKey----->" + eventDefinitionKey);
-        console.log('To: ---> '+to);
         
-        console.log('mobile: --->');
-        console.log(mobile);
+       
         console.log('-----------');
         payload['arguments'].execute.inArguments = [{
             "accountSid": accountSid,
             "authToken": authToken,
             "messagingService": messagingService,
             "body": body,
-            "mobile": "{{Event." + eventDefinitionKey + ".Mobile}}",
             "to": "{{Event." + eventDefinitionKey + ".Phone}}"//<----This should map to your data extension name and phone number column,
            
         }];
