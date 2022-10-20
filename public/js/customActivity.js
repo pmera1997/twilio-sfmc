@@ -189,21 +189,22 @@ define([
         var authToken = $('#authToken').val();
         var messagingService = $('#messagingService').val();
         var body = $('#messageBody').val();
-        var to="{{Event.DEAudience-a341458e-71fb-1dee-ed03-f2b8cf340b52.Phone}}";
+        var to="{{Event." + eventDefinitionKey + ".Phone}}";
        
-        var mail= "{{Contact.Attribute.AA_Twilio.Subscriberkey}}";
-
+        var mail= "{{Event." + eventDefinitionKey + ".Phone}}" ;
+        var mobile = "{{Event." + eventDefinitionKey + ".Mobile}}" ;
         console.log("eventDefinitionKey----->" + eventDefinitionKey);
         console.log('To: ---> '+to);
-       
-        console.log('Email: --->');
-        console.log(mail);
+        
+        console.log('mobile: --->');
+        console.log(mobile);
         console.log('-----------');
         payload['arguments'].execute.inArguments = [{
             "accountSid": accountSid,
             "authToken": authToken,
             "messagingService": messagingService,
             "body": body,
+            "mobile": "{{Event." + eventDefinitionKey + ".Mobile}}",
             "to": "{{Event." + eventDefinitionKey + ".Phone}}"//<----This should map to your data extension name and phone number column,
            
         }];
